@@ -358,6 +358,13 @@ class Response():
         
         c_len, self._content = self.build_content(path, base_dir)
 
+        if c_len > 0 or path == "return.json":
+             if self.status_code is None:
+                self.status_code = 200
+                self.reason = "OK"
+        else:
+             return self.build_notfound()
+
         self._header = self.build_response_header(request)
         print(f"[Response] Header building complete. Cookies to set: {self.cookies}")
 

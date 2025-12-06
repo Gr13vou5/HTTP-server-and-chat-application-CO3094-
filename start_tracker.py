@@ -219,7 +219,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     ip = args.server_ip
     port = args.server_port
-
+    
     # Clear the return.json
     with open("apps/return.json", "w") as f:
         f.write("")

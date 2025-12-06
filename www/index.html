@@ -35,13 +35,17 @@
 
     <h2 class="section-title">Active Peer List</h2>
     <button class="btn secondary full" onclick="getList()">Refresh Peer List</button>
-
+    <button onclick="chat()">Start Chatting</button>
     <div id="peerTable" class="table-container"></div>
 </div>
 
 <div id="popup"></div>
 
 <script>
+
+function chat() {
+    window.location.href = 'chat.html';
+}
 function showPopup(msg, isError = false) {
     const popup = document.getElementById('popup');
     popup.textContent = msg;
